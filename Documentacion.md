@@ -394,3 +394,73 @@ Vamos a crear nuestro diagrama de casos de uso.
 Este diagrama refleja de forma resumida qué acciones se pueden llevar a cabo en nuestro aplicación dependiendo del rol del usuario.
 
 Ahora que tenemos claro todo **lo que debe hacer la versión 1.0**, *nuestra misión* ahora es **planificar el trabajo** que se nos viene encima...
+
+## Diseño de la interfaz. Bocetos
+
+Una vez tenemos claro las funcionalidades que debe realizar nuestra aplicación, comenzamos con el diseño de **la interfaz**.
+
+Este proceso incluye diseñar los **bocetos**, los **wireframes** y los mockups ,para acabar creando los prototipos con html.
+
+Sin duda, el primer paso, debe ser dibujar los bocetos, así que, busca un lápiz, una goma de borrar y un puñado de papel, ¡y manos a la obra!
+
+### Diseño de Bocetos
+
+Recuerda que **los bocetos son dibujos a mano alzada** que representan ideas de diseño de manera rápida y no detallada. Los bocetos suelen ser utilizados al inicio del proceso de diseño para explorar diferentes ideas y soluciones de diseño de manera rápida y económica. Los bocetos son ideales para hacer borradores rápidos y para discutir ideas con colegas y clientes.
+
+#### Home y menús usuarios
+![boceto 1](/img/boc1.jpg)
+
+Hemos didivido la interficie en 3 zonas, el encabezado (header), el cuerpo principal (main) y el pie de página (footer).
+
+- En el **header** vamos a alojar una barra superior fija con: el **logo** y nombre de la web (que hará las veces de link a la página principal), un **menú central genérico** (para acceder a páginas públicas), un **menú central específico** (que será diferente en función del rol de usuario logueado), y un icono (avatar) que permitirá ver la imagen del usuario logueado y que hará de botón para desplegar otro menú, el **menú de usuario** (que tendrá diferentes items dependiendo de si la sesió está abierta o no y del tipo de rol que tenga el usuario logueado).
+- El **cuerpo** (main) albergará el contenido de las páginas. Será la sección que vaya cambiando dependiendo de la página que carguemos. En la página home simplemente aparece una imagen de fondo y el nombre de la web.
+- El **header** será meramente informativo
+
+#### Registro de un usuario
+![boceto 2](/img/boc2.jpg)
+
+#### Iniciar sesión
+![boceto 3](/img/boc3.jpg)
+
+#### Editar mi perfil
+![boceto 4](/img/boc4.jpg)
+
+#### Editar mi perfil
+![boceto 5](/img/boc5.jpg)
+Editar perfil será una ventana modal, es decir, se mostrará la ventana y el fondo se volverá oscuro.
+
+Esta ventana de edición permitirá, además de modificar los datos del usuario, **añadir una imagen de avatar**. Por el momento, en esta primera versión, podremos añadir el link de una imagen que esté alojada en un servidor. En la siguiente versión (versión 1.1) actualizaremos esta ventana para que puedan **subirse archivos** (imágenes) al servidor.
+
+#### Listado de todos los proyectos
+[boceto 6](/img/boc6.jpg)
+Editar perfil será una ventana modal, es decir, se mostrará la ventana y el fondo se volverá oscuro.
+
+Esta ventana de edición permitirá, además de modificar los datos del usuario, añadir una imagen de avatar. Por el momento, en esta primera versión, podremos añadir el link de una imagen que esté alojada en un servidor. En la siguiente versión (versión 1.1) actualizaremos esta ventana para que puedan subirse archivos (imágenes) al servidor.
+
+#### Listado de Mis proyectos
+[boceto 7](/img/boc7.jpg)
+Editar perfil será una ventana modal, es decir, se mostrará la ventana y el fondo se volverá oscuro.
+
+Esta ventana de edición permitirá, además de modificar los datos del usuario, añadir una imagen de avatar. Por el momento, en esta primera versión, podremos añadir el link de una imagen que esté alojada en un servidor. En la siguiente versión (versión 1.1) actualizaremos esta ventana para que puedan subirse archivos (imágenes) al servidor.
+
+#### Detalle de un proyecto
+![boceto 8](/img/boc8.jpg) 
+Si el usuario que está viendo la información de un proyecto en concreto es el autor de dicho proyecto, aparecerá un icono para la edición del mismo.
+
+#### Nuevo proyecto / Editar un proyecto
+![boceto 9](/img/boc9.jpg)
+Esta vista sirve tanto para crear un nuevo proyecto como para editarlo.
+
+Si el proyecto es nuevo, el botón mostrará el texto ENVIAR, pero si estamos editándolo aparecerá el texto ACTUALIZAR. Al crear o actualizar el proyecto, la web nos reenvía a la vista 'Detalle de proyecto'.
+
+#### Panel administración de proyectos
+![boceto 10](/img/boc10.jpg)
+Si tienes el rol '**administrador**' aparecerá el item 'Panel administración' en el **menú superior específico**. Este item nos permite cargar la vista '**Panel administración de proyectos**'. Desde esta vista también podemos acceder al 'Panel administración de usuarios'.
+
+Esta vista permite **editar o borrar cualquier proyecto** haciendo click en los iconos correspondientes. La opción editar nos llevará a la vista 'Editar proyecto'
+
+#### Panel administración de usuarios
+![boceto 11](/img/boc11.jpg)
+Esta vista permite **editar los datos de los usuarios**. Por supuesto es solo accesible para los administradores.
+
+En esta vista, el método para editar la información es diferentes. Aquí los datos **aparecen sobre 'inputs'**, de manera que al hacer clic sobre ellos, aparecerá el cursor de edición. Se pueden modificar todos los datos (en especial el 'estado' y el 'rol' del usuario) excepto el email.
