@@ -432,13 +432,13 @@ Editar perfil será una ventana modal, es decir, se mostrará la ventana y el fo
 Esta ventana de edición permitirá, además de modificar los datos del usuario, **añadir una imagen de avatar**. Por el momento, en esta primera versión, podremos añadir el link de una imagen que esté alojada en un servidor. En la siguiente versión (versión 1.1) actualizaremos esta ventana para que puedan **subirse archivos** (imágenes) al servidor.
 
 #### Listado de todos los proyectos
-[boceto 6](/img/boc6.jpg)
+![boceto 6](/img/boc6.jpg)
 Editar perfil será una ventana modal, es decir, se mostrará la ventana y el fondo se volverá oscuro.
 
 Esta ventana de edición permitirá, además de modificar los datos del usuario, añadir una imagen de avatar. Por el momento, en esta primera versión, podremos añadir el link de una imagen que esté alojada en un servidor. En la siguiente versión (versión 1.1) actualizaremos esta ventana para que puedan subirse archivos (imágenes) al servidor.
 
 #### Listado de Mis proyectos
-[boceto 7](/img/boc7.jpg)
+![boceto 7](/img/boc7.jpg)
 Editar perfil será una ventana modal, es decir, se mostrará la ventana y el fondo se volverá oscuro.
 
 Esta ventana de edición permitirá, además de modificar los datos del usuario, añadir una imagen de avatar. Por el momento, en esta primera versión, podremos añadir el link de una imagen que esté alojada en un servidor. En la siguiente versión (versión 1.1) actualizaremos esta ventana para que puedan subirse archivos (imágenes) al servidor.
