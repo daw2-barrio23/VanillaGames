@@ -1,15 +1,18 @@
-<header>
+
+export const header = {
+    template: // html
+    `
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#"
         ><img
-          src=".images/logo.svg"
+          src="images/logo.svg"
           alt=""
           width="30"
           height="24"
           class="d-inline-block align-text-top"
         />
-
+  
         Vanilla Games</a
       >
       <button
@@ -52,4 +55,6 @@
       </div>
     </div>
   </nav>
-</header>
+  
+    `
+  }  
