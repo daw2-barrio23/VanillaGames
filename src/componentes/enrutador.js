@@ -1,4 +1,3 @@
-  
 export const enrutador = {
 
     // Objeto (diccionario) con todas las rutas y su vista asociada
@@ -9,7 +8,7 @@ export const enrutador = {
       registro: import('../vistas/registroVista.js'),
       login: import('../vistas/loginVista.js'),
       // Proyectos
-      proyectos: import('../vistas/proyectosVista.js'),
+      proyectos: import('../vistas/proyectoVista.js'),
       proyectoNuevo: import('../vistas/proyectoNuevoVista.js'),
       proyectoEditar: import('../vistas/proyectoEditarVista.js'),
       proyectoDetalle: import('../vistas/proyectoDetalleVista.js'),
@@ -29,13 +28,17 @@ export const enrutador = {
       const componenteVista = await enrutador.rutas[path]
       // Si existe la vista la podremos cargar
       if (componenteVista) {
-        // try {
-        // Obtenemos el objeto del componente (que fué exportado como default)
-        const vista = await componenteVista.default
-        // inyectamos vista y ejecutamos su script
-        document.querySelector('main').innerHTML = vista.template
-        // A los script les pasamos el parametro que hemos extraido de la ruta. Así podemos pasar, por ejemplo, el id de un proyecto
-        vista.script(parametro)
+        try {
+          // Obtenemos el objeto del componente (que fué exportado como default)
+          const vista = await componenteVista.default
+          // inyectamos vista y ejecutamos su script
+          document.querySelector('main').innerHTML = vista.template
+          // A los script les pasamos el parametro que hemos extraido de la ruta. Así podemos pasar, por ejemplo, el id de un proyecto
+          vista.script(parametro)
+        } catch (error) {
+          // Si se produce un error cargamos la vista 404
+          console.log(error)
+        }
       } else {
         window.location = '#/404'
       }
@@ -45,9 +48,10 @@ export const enrutador = {
     observadorRutas: () => {
       document.body.addEventListener('click', event => {
         // Evitamos que se cargue la página
+  
         const link = event.target
         if (link.classList.contains('router-link')) {
-          console.log('router-link')
+          console.log('router-link');
           event.preventDefault()
           // Obtenemos la ruta del enlace sin el .html
           const href = link.getAttribute('href')
@@ -67,4 +71,3 @@ export const enrutador = {
       })
     }
   }
-  
