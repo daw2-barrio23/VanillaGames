@@ -30,3 +30,7 @@ document.querySelector('footer').innerHTML = footer.template
 enrutador.observadorRutas()
 // Cargamos la página home
 window.location = '#/home'
+
+// Inyectamos el componente header
+document.querySelector('header').innerHTML = header.template
+header.script()
