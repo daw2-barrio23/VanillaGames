@@ -13,6 +13,8 @@ async function cargarVista () {
   const vista = componente.default
   // Inyectamos la vista home
   document.querySelector('main').innerHTML = vista.template
+  // Ejecutamos la lógica de la vista
+  vista.script()
 }
 cargarVista()
 
