@@ -3,7 +3,7 @@ import 'bootstrap'
 
 // Import our custom CSS
 import './scss/styles.scss'
-
+// Archivo funcionando
 import { header } from './componentes/header'
 import { footer } from './componentes/footer'
 

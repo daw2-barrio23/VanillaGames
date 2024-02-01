@@ -1,5 +1,6 @@
 import { ls } from './funciones'
 export const editarPerfil = {
+  // Archivo funcionando
   template: // html
   `
   <!-- Ventana modaledición perfil -->

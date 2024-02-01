@@ -1,4 +1,5 @@
 export default {
+  // Archivo funcionando
     template: // html
     `
   <div class="container">

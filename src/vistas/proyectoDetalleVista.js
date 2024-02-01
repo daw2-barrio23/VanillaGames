@@ -1,6 +1,7 @@
 import { proyectos } from '../bd/datosPrueba'
 
 export default {
+  // Archivo funcionando
   template: // html
   `
   <div class="container">

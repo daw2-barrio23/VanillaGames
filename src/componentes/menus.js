@@ -1,3 +1,4 @@
+// Archivo funcionando
 import { ls } from './funciones'
 const menuRol = {
   templateAnonimo: // html

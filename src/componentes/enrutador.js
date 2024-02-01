@@ -1,5 +1,5 @@
 export const enrutador = {
-
+    // Archivo funcionando
     // Objeto (diccionario) con todas las rutas y su vista asociada
     rutas: {
       home: import('../vistas/homeVista.js'),

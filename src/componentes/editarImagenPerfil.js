@@ -1,5 +1,6 @@
 import adminVista from '../vistas/adminVista'
 export const editarImagenPerfil = {
+  // Archivo funcionando
   template: // html
   `
   <!-- Ventana modaledición perfil -->

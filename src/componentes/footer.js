@@ -1,4 +1,5 @@
 export const footer = {
+  // Archivo funcionando
     template: // html
     `
   <nav class="navbar bg-secondary fixed-bottom small">

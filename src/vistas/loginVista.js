@@ -3,6 +3,7 @@ import { ls } from '../componentes/funciones'
 import { header } from '../componentes/header'
 
 export default {
+  // Archivo funcionando
     template: // html
     `
     <div class="container">

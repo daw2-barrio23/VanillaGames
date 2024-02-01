@@ -1,5 +1,5 @@
 import path from 'path'
-
+// Archivo funcionando
 export default {
   root: path.resolve(__dirname, 'src'), // Carpeta donde alojamos el archivo main.js
   base: './',

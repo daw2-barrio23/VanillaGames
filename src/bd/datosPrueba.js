@@ -1,3 +1,4 @@
+// Archivo funcionando
 export const perfiles = [
     {
       id: 1,

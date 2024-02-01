@@ -3,6 +3,7 @@ import { ls } from '../componentes/funciones'
 import { editarImagenPerfil } from '../componentes/editarImagenPerfil'
 
 export default {
+  // Archivo funcionando
   template: // html
   `
   <div class="container">

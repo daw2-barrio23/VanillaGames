@@ -2,6 +2,7 @@ import { proyectos } from '../bd/datosPrueba'
 import { ls } from '../componentes/funciones'
 
 export default {
+  // Archivo funcionando
   template: // html
   `
   <div class="container">
