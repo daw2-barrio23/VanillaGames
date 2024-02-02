@@ -61,10 +61,10 @@ const menuUsuario = {
       </a>
       <ul class="dropdown-menu me-0" style="left: -100px; width: 100px">
         <li class="text-light text-end p-2 small">
-          ${ls.getUsuario().email}
+          
         </li>
         <li class="text-light text-end pe-2 small fst-italic">
-          ${ls.getUsuario().rol}
+          
         </li>
         <li><hr class="dropdown-divider" /></li>
         <li>
@@ -97,10 +97,10 @@ const menuUsuario = {
       </a>
       <ul class="dropdown-menu me-0" style="left: -100px; width: 100px">
         <li class="text-light text-center p-2">
-          <p>${ls.getUsuario().email}</p>
+          <p></p>
         </li>
         <li class="text-light text-center p-2">
-          <p>${ls.getUsuario().rol}</p>
+          <p></p>
         </li>
         <li><hr class="dropdown-divider" /></li>
         <li>
@@ -134,10 +134,10 @@ const menuUsuario = {
       </a>
       <ul class="dropdown-menu me-0" style="left: -100px; width: 100px">
         <li class="text-light text-center p-2">
-          <p>${ls.getUsuario().email}</p>
+          <p></p>
         </li>
         <li class="text-light text-center p-2">
-          <p>${ls.getUsuario().rol}</p>
+          <p></p>
         </li>
         <li><hr class="dropdown-divider" /></li>
         <li>
