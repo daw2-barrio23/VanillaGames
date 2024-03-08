@@ -3,7 +3,7 @@ export const editarPerfil = {
   // Archivo funcionando
   template: // html
   `
-  <!-- Ventana modaledición perfil -->
+  <!-- Ventana modaledición perfil --> 
   <div
     class="modal fade"
     id="modalEditarPerfil"

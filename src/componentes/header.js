@@ -9,10 +9,10 @@ export const header = {
   `
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand router-link" href="#/home"
-      ><img
+    <a class="navbar-brand router-link" href="#/home">
+      <img
         src="images/logo.svg"
-        alt=""
+        alt="fpllefia"
         width="30"
         height="24"
         class="d-inline-block align-text-top"
