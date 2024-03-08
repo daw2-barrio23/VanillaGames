@@ -1,4 +1,5 @@
 const homeVista = {
+  // Archivo funcionando
   template: (
     // html
     `

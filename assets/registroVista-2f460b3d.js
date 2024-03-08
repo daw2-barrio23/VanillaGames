@@ -1,4 +1,5 @@
 const registroVista = {
+  // Archivo funcionando
   template: (
     // html
     `

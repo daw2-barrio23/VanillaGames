@@ -5200,6 +5200,8 @@ const menuRol = {
   <ul class="navbar-nav ms-auto me-2 mb-2 mb-lg-0">
     <li class="nav-item">
       <a class="nav-link active router-link" aria-current="page" href="#/proyectos">PROYECTOS</a>
+    </li>
+    <li>
       <a class="nav-link active router-link" aria-current="page" href="#/admin">Panel ADMIN</a>
     </li>
   </ul>
@@ -5219,27 +5221,28 @@ const menuUsuario = {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <img src="/assets/images/avatar.svg" alt="" width="25" />
+        <img id="avatarMenu" src="/assets/images/avatar.svg" alt="" width="25" />
       </a>
       <ul class="dropdown-menu me-0" style="left: -100px; width: 100px">
-        <li class="text-light text-end p-2 small">
-          
+        <li id="emailUserMenu" class="text-light text-end p-2 small">
+          ${ls.getUsuario().email}
         </li>
-        <li class="text-light text-end pe-2 small fst-italic">
-          
+        <li id="rolUserMenu" class="text-light text-end pe-2 small fst-italic">
+          ${ls.getUsuario().rol}
         </li>
         <li><hr class="dropdown-divider" /></li>
         <li>
           <a 
             class="dropdown-item" 
             href="#"
-            data-bs-toggle="modal"     data-bs-target="#modalEditarPerfil"
+            data-bs-toggle="modal"
+            data-bs-target="#modalEditarPerfil"
             >
             Mi perfil
           </a>
         </li>
         <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+        <li><a class="dropdown-item cerrarSesion" href="#">Cerrar sesión</a></li>
       </ul>
     </li>
   </ul>
@@ -5250,21 +5253,21 @@ const menuUsuario = {
     `
   <ul class="navbar-nav ms-auto me-2 mb-2 mb-lg-0">
     <li class="nav-item dropdown">
-      <a
-        class="nav-link dropdown-toggle"
-        href="#"
-        role="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        <img src="/assets/images/avatar.svg" alt="" width="25" />
-      </a>
+    <a
+    class="nav-link dropdown-toggle"
+    href="#"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    >
+      <img id="avatarMenu" src="/assets/images/avatar.svg" alt="" width="25" />
+    </a>
       <ul class="dropdown-menu me-0" style="left: -100px; width: 100px">
-        <li class="text-light text-center p-2">
-          <p></p>
+        <li id="emailUserMenu" class="text-light text-end p-2 small">
+          ${ls.getUsuario().email}
         </li>
-        <li class="text-light text-center p-2">
-          <p></p>
+        <li id="rolUserMenu" class="text-light text-end p-2 small">
+          ${ls.getUsuario().rol}
         </li>
         <li><hr class="dropdown-divider" /></li>
         <li>
@@ -5277,7 +5280,7 @@ const menuUsuario = {
           </a>
         </li>
         <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+        <li><a class="dropdown-item cerrarSesion" href="#">Cerrar sesión</a></li>
       </ul>
     </li>
   </ul>
@@ -5296,14 +5299,14 @@ const menuUsuario = {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <img src="/assets/images/avatar.svg" alt="" width="25" />
+        <img id="avatarMenu" src="/assets/images/avatar.svg" alt="" width="25" />
       </a>
       <ul class="dropdown-menu me-0" style="left: -100px; width: 100px">
-        <li class="text-light text-center p-2">
-          <p></p>
+        <li id="emailUserMenu" class="text-light text-end p-2 small">
+          ${ls.getUsuario().email}
         </li>
-        <li class="text-light text-center p-2">
-          <p></p>
+        <li id="rolUserMenu" class="text-light text-end p-2 small">
+          ${ls.getUsuario().rol}
         </li>
         <li><hr class="dropdown-divider" /></li>
         <li>
@@ -5316,7 +5319,7 @@ const menuUsuario = {
           </a>
         </li>
         <li><hr class="dropdown-divider" /></li>
-        <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+        <li><a class="dropdown-item cerrarSesion" href="#">Cerrar sesión</a></li>
       </ul>
     </li>
   </ul>
@@ -5324,160 +5327,181 @@ const menuUsuario = {
   )
 };
 const editarPerfil = {
+  // Archivo funcionando
   template: (
     // html
     `
-    <!-- Ventana modaledición perfil -->
-    <div
-      class="modal fade"
-      id="modalEditarPerfil"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <!-- Formulario de edición de perfil -->
-      <form novalidate action="">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
-                Edición de perfil
-              </h1>
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div class="form border shadow-sm p-3">
-                <div class="m-1" style="max-width: 400px">
-                  <div class="imgPerfil border shadow-sm p-3 mb-3">
-                    <div
-                      class="imagen mx-auto mb-1 rounded-circle"
-                      style="
-                        background-image: url(.images/avatar.svg);
-                        width: 200px;
-                        height: 200px;
-                        background-size: cover;
-                        background-position: center;
-                      "
-                    ></div>
-  
-                    <!-- Imagen de perfil -->
-                    <label for="imagen" class="form-label mt-3">URL imagen:</label>
-                    <input
-                      id="imagen"
-                      type="url"
-                      class="form-control"
-                      value="http://imagenavatar.png"
-                    />
-                    <div class="invalid-feedback">La url no es correcta</div>
-                  </div>
-  
-                  <div class="">
-                    <!-- Nombre -->
-                    <label for="nombre" class="form-label">Nombre:</label>
-                    <input required id="nombre" type="text" class="form-control" />
-                    <div class="invalid-feedback">El nombre es requerido</div>
-                    <!-- Apellidos -->
-                    <label for="apellidos" class="form-label">Apellidos:</label>
-                    <input id="apellidos" type="text" class="form-control" />
-  
-                    <!-- Email -->
-                    <label for="email" class="form-label">Email:</label>
-                    <input required id="email" type="email" class="form-control" />
-                    <div class="invalid-feedback">El formato no es correcto</div>
-  
-                    <!-- Contraseña -->
-                    <label for="pass" class="form-label mt-3">Contraseña:</label>
-                    <input
-                      required
-                      minlength="6"
-                      id="pass"
-                      type="password"
-                      class="form-control"
-                    />
-                    <div class="invalid-feedback">
-                      La contraseña debe ser de 6 caracteres como mínimo
-                    </div>
+  <!-- Ventana modaledición perfil -->
+  <div
+    class="modal fade"
+    id="modalEditarPerfil"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <!-- Formulario de edición de perfil -->
+    <form novalidate id="formularioEditarPerfil" action="">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">
+              Edición de perfil
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="form border shadow-sm p-3">
+              <div class="m-1" style="max-width: 400px">
+                <div class="imgPerfil border shadow-sm p-3 mb-3">
+                  <div
+                    class="imagen mx-auto mb-1 rounded-circle"
+                    style="
+                      background-image: url(${ls.getUsuario().avatar});
+                      width: 200px;
+                      height: 200px;
+                      background-size: cover;
+                      background-position: center;
+                    "
+                  ></div>
+
+                  <!-- Imagen de perfil -->
+                  <label for="imagen" class="form-label mt-3">URL imagen:</label>
+                  <input
+                    id="avatar"
+                    type="url"
+                    class="form-control"
+                    value="${ls.getUsuario().avatar}"
+                  />
+                  <div class="invalid-feedback">La url no es correcta</div>
+                </div>
+
+                <div class="">
+                  <!-- Nombre -->
+                  <label for="nombrePerfil" class="form-label">Nombre:</label>
+                  <input required id="nombrePerfil" type="text" class="form-control" value="${ls.getUsuario().nombre}" />
+                  <div class="invalid-feedback">El nombre es requerido</div>
+                  <!-- Apellidos -->
+                  <label for="apellidosPerfil" class="form-label">Apellidos:</label>
+                  <input id="apellidosPerfil" type="text" class="form-control" value = "${ls.getUsuario().apellidos}" />
+
+                  <!-- Email -->
+                  <label for="emailPerfil" class="form-label">Email:</label>
+                  <input required id="emailPerfil" type="email" class="form-control" value = "${ls.getUsuario().email}" />
+                  <div class="invalid-feedback">El formato no es correcto</div>
+
+                  <!-- Contraseña -->
+                  <label for="passPerfil" class="form-label mt-3">Nueva contraseña:</label>
+                  <input
+                    
+                    minlength="6"
+                    id="passPerfil"
+                    type="password"
+                    class="form-control"
+                  />
+                  <div class="invalid-feedback">
+                    La contraseña debe ser de 6 caracteres como mínimo
                   </div>
                 </div>
               </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                Cancelar
-              </button>
-              <button type="button" class="btn btn-primary">Guardar cambios</button>
-            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button id="enviarPerfilEditado" data-id = ${ls.getUsuario().user_id} type="submit" class="btn btn-primary">Guardar cambios</button>
           </div>
         </div>
-      </form>
-    </div>
-    `
+      </div>
+    </form>
+  </div>
+  `
   ),
   script: () => {
-    console.log("script de modal editar perfil cargado");
+    console.log("script editar perfil cargado");
+    const formulario = document.querySelector("#formularioEditarPerfil");
+    formulario.addEventListener("submit", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (!formulario.checkValidity())
+        ;
+      else {
+        enviaDatos();
+      }
+      formulario.classList.add("was-validated");
+    });
+    function enviaDatos() {
+      const perfilEditado = {
+        avatar: document.querySelector("#avatar").value,
+        nombre: document.querySelector("#nombrePerfil").value,
+        apellidos: document.querySelector("#apellidosPerfil").value,
+        email: document.querySelector("#emailPerfil").value,
+        contraseña: document.querySelector("#passPerfil").value
+      };
+      alert(`Enviando a la base de datos el objeto con id = ${ls.getUsuario().user_id}`);
+      console.log(`Enviando a la base de datos el objeto con user_id = ${ls.getUsuario().user_id}`, perfilEditado);
+    }
   }
 };
 const header = {
   template: (
     // html
     `
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand router-link" href="#/home"
-          ><img
-            src="/assets/images/logo.svg"
-            alt=""
-            width="30"
-            height="24"
-            class="d-inline-block align-text-top"
-          />
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand router-link" href="#/home">
+      <img
+        src="images/logo.svg"
+        alt="fpllefia"
+        width="30"
+        height="24"
+        class="d-inline-block align-text-top"
+      />
 
-          Vanilla Games</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active router-link" aria-current="page" href="#/home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link router-link" aria-current="page" href="#">TOP5 Proyectos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link router-link" aria-current="page" href="#" class="router-link">A cerca de</a>
-            </li>
-          </ul>
+      Vanilla Games</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active router-link" aria-current="page" href="#/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link router-link" aria-current="page" href="#">TOP5 Proyectos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link router-link" aria-current="page" href="#" class="router-link">A cerca de</a>
+        </li>
+      </ul>
 
-          <div id="menuRol"></div>
-          <div id="menuUsuario"></div>
-        </div>
-      </div>
-    </nav>
-    <div id="modal">
-      <!-- Aquí inyectamos el componente editarPerfil -->
+      <div id="menuRol"></div>
+      <div id="menuUsuario"></div>
     </div>
+  </div>
+</nav>
+<div id="modal"></div>
 
   `
   ),
   script: () => {
     console.log("Header cargado");
     document.querySelector("#modal").innerHTML = editarPerfil.template;
-    ls.setUsuario({ email: "chafardera@gmial.com", rol: "registrado" });
+    editarPerfil.script();
     const rolUsuario = ls.getUsuario().rol;
     switch (rolUsuario) {
       case "registrado":
@@ -5494,11 +5518,29 @@ const header = {
         break;
       default:
         document.querySelector("#menuRol").innerHTML = menuRol.templateAnonimo;
+        document.querySelector("#menuUsuario").innerHTML = "";
         break;
     }
+    try {
+      document.querySelector("#emailUserMenu").innerHTML = ls.getUsuario().email;
+      document.querySelector("#rolUserMenu").innerHTML = ls.getUsuario().rol;
+      const imagen = ls.getUsuario().avatar === "" ? "images/avatar.svg" : ls.getUsuario().avatar;
+      document.querySelector("#avatarMenu").setAttribute("src", imagen);
+    } catch (error) {
+      console.log("El usuario no está registrado y no tiene menú de usuario");
+    }
+    document.querySelector("header").addEventListener("click", (e) => {
+      if (e.target.classList.contains("cerrarSesion")) {
+        e.preventDefault();
+        ls.setUsuario("");
+        window.location = "#/home";
+        header.script();
+      }
+    });
   }
 };
 const footer = {
+  // Archivo funcionando
   template: (
     // html
     `
@@ -5522,19 +5564,20 @@ const footer = {
   )
 };
 const enrutador = {
+  // Archivo funcionando
   // Objeto (diccionario) con todas las rutas y su vista asociada
   rutas: {
-    home: __vitePreload(() => import("./homeVista-589890d0.js"), true ? [] : void 0, import.meta.url),
+    home: __vitePreload(() => import("./homeVista-a7de79e3.js"), true ? [] : void 0, import.meta.url),
     // Usuarios
-    admin: __vitePreload(() => import("./adminVista-6fa0d0c6.js"), true ? [] : void 0, import.meta.url),
-    registro: __vitePreload(() => import("./registroVista-09bcd755.js"), true ? [] : void 0, import.meta.url),
-    login: __vitePreload(() => import("./loginVista-327898aa.js"), true ? [] : void 0, import.meta.url),
+    admin: __vitePreload(() => import("./adminVista-56f74680.js"), true ? ["./adminVista-56f74680.js","./datosPrueba-ef04ddb8.js"] : void 0, import.meta.url),
+    registro: __vitePreload(() => import("./registroVista-2f460b3d.js"), true ? [] : void 0, import.meta.url),
+    login: __vitePreload(() => import("./loginVista-fc84ad77.js"), true ? ["./loginVista-fc84ad77.js","./datosPrueba-ef04ddb8.js"] : void 0, import.meta.url),
     // Proyectos
-    proyectos: __vitePreload(() => import("./proyectoVista-ae8bb359.js"), true ? [] : void 0, import.meta.url),
-    proyectoNuevo: __vitePreload(() => import("./proyectoNuevoVista-1b893b1a.js"), true ? [] : void 0, import.meta.url),
-    proyectoEditar: __vitePreload(() => import("./proyectoEditarVista-f853b123.js"), true ? [] : void 0, import.meta.url),
-    proyectoDetalle: __vitePreload(() => import("./proyectoDetalleVista-480975a2.js"), true ? [] : void 0, import.meta.url),
-    404: __vitePreload(() => import("./404-f29c5765.js"), true ? [] : void 0, import.meta.url)
+    proyectos: __vitePreload(() => import("./proyectoVista-b4c87d14.js"), true ? ["./proyectoVista-b4c87d14.js","./datosPrueba-ef04ddb8.js"] : void 0, import.meta.url),
+    proyectoNuevo: __vitePreload(() => import("./proyectoNuevoVista-99a05cc6.js"), true ? [] : void 0, import.meta.url),
+    proyectoEditar: __vitePreload(() => import("./proyectoEditarVista-4ea3b128.js"), true ? ["./proyectoEditarVista-4ea3b128.js","./datosPrueba-ef04ddb8.js"] : void 0, import.meta.url),
+    proyectoDetalle: __vitePreload(() => import("./proyectoDetalleVista-3083afe8.js"), true ? ["./proyectoDetalleVista-3083afe8.js","./datosPrueba-ef04ddb8.js"] : void 0, import.meta.url),
+    404: __vitePreload(() => import("./404-8fc99eb8.js"), true ? [] : void 0, import.meta.url)
   },
   // Método que obtiene la ruta del navegador
   router: async () => {
@@ -5573,7 +5616,7 @@ const enrutador = {
   }
 };
 async function cargarVista() {
-  const componente = await __vitePreload(() => import("./homeVista-589890d0.js"), true ? [] : void 0, import.meta.url);
+  const componente = await __vitePreload(() => import("./homeVista-a7de79e3.js"), true ? [] : void 0, import.meta.url);
   const vista = componente.default;
   document.querySelector("main").innerHTML = vista.template;
   vista.script();
@@ -5585,3 +5628,7 @@ enrutador.observadorRutas();
 window.location = "#/home";
 document.querySelector("header").innerHTML = header.template;
 header.script();
+export {
+  header as h,
+  ls as l
+};
