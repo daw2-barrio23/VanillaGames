@@ -1,5 +1,5 @@
 import { p as proyectos, a as perfiles } from "./datosPrueba-ef04ddb8.js";
-import { l as ls } from "./main-1c2428dd.js";
+import { l as ls } from "./main-f759cdff.js";
 const editarImagenPerfil = {
   // Archivo funcionando
   template: (
