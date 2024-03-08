@@ -1,5 +1,5 @@
 import { a as perfiles } from "./datosPrueba-ef04ddb8.js";
-import { l as ls, h as header } from "./main-9c440199.js";
+import { l as ls, h as header } from "./main-1c2428dd.js";
 const loginVista = {
   // Archivo funcionando
   template: (

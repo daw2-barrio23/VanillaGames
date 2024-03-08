@@ -1,5 +1,5 @@
 import { p as proyectos } from "./datosPrueba-ef04ddb8.js";
-import { l as ls } from "./main-9c440199.js";
+import { l as ls } from "./main-1c2428dd.js";
 const proyectoVista = {
   // Archivo funcionando
   template: (

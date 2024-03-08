@@ -5567,13 +5567,13 @@ const enrutador = {
   // Archivo funcionando
   // Objeto (diccionario) con todas las rutas y su vista asociada
   rutas: {
-    home: __vitePreload(() => import("./homeVista-a7de79e3.js"), true ? [] : void 0, import.meta.url),
+    home: __vitePreload(() => import("./homeVista-ff6c1654.js"), true ? [] : void 0, import.meta.url),
     // Usuarios
-    admin: __vitePreload(() => import("./adminVista-56f74680.js"), true ? ["./adminVista-56f74680.js","./datosPrueba-ef04ddb8.js"] : void 0, import.meta.url),
+    admin: __vitePreload(() => import("./adminVista-e5d8958e.js"), true ? ["./adminVista-e5d8958e.js","./datosPrueba-ef04ddb8.js"] : void 0, import.meta.url),
     registro: __vitePreload(() => import("./registroVista-2f460b3d.js"), true ? [] : void 0, import.meta.url),
-    login: __vitePreload(() => import("./loginVista-fc84ad77.js"), true ? ["./loginVista-fc84ad77.js","./datosPrueba-ef04ddb8.js"] : void 0, import.meta.url),
+    login: __vitePreload(() => import("./loginVista-36fbef42.js"), true ? ["./loginVista-36fbef42.js","./datosPrueba-ef04ddb8.js"] : void 0, import.meta.url),
     // Proyectos
-    proyectos: __vitePreload(() => import("./proyectoVista-b4c87d14.js"), true ? ["./proyectoVista-b4c87d14.js","./datosPrueba-ef04ddb8.js"] : void 0, import.meta.url),
+    proyectos: __vitePreload(() => import("./proyectoVista-834cc3e1.js"), true ? ["./proyectoVista-834cc3e1.js","./datosPrueba-ef04ddb8.js"] : void 0, import.meta.url),
     proyectoNuevo: __vitePreload(() => import("./proyectoNuevoVista-99a05cc6.js"), true ? [] : void 0, import.meta.url),
     proyectoEditar: __vitePreload(() => import("./proyectoEditarVista-4ea3b128.js"), true ? ["./proyectoEditarVista-4ea3b128.js","./datosPrueba-ef04ddb8.js"] : void 0, import.meta.url),
     proyectoDetalle: __vitePreload(() => import("./proyectoDetalleVista-3083afe8.js"), true ? ["./proyectoDetalleVista-3083afe8.js","./datosPrueba-ef04ddb8.js"] : void 0, import.meta.url),
@@ -5616,7 +5616,7 @@ const enrutador = {
   }
 };
 async function cargarVista() {
-  const componente = await __vitePreload(() => import("./homeVista-a7de79e3.js"), true ? [] : void 0, import.meta.url);
+  const componente = await __vitePreload(() => import("./homeVista-ff6c1654.js"), true ? [] : void 0, import.meta.url);
   const vista = componente.default;
   document.querySelector("main").innerHTML = vista.template;
   vista.script();
