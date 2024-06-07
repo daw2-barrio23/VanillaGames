@@ -1,18 +1,19 @@
 // importamos la función ls del archivo funciones
-// Archivo funcionando
 import { ls } from '../componentes/funciones'
 import { menuRol, menuUsuario } from './menus'
+import { User } from '../bd/user'
 import { editarPerfil } from './editarPerfil'
+
 
 export const header = {
   template: // html
   `
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
   <div class="container">
-    <a class="navbar-brand router-link" href="#/home">
-      <img
+    <a class="navbar-brand router-link" href="#/home"
+      ><img
         src="images/logo.svg"
-        alt="fpllefia"
+        alt=""
         width="30"
         height="24"
         class="d-inline-block align-text-top"
@@ -53,6 +54,7 @@ export const header = {
 
   `,
   script: () => {
+    
     console.log('Header cargado')
     // Cargamos la ventana modal para editar perfil
     document.querySelector('#modal').innerHTML = editarPerfil.template
@@ -97,12 +99,14 @@ export const header = {
     } catch (error) {
       console.log('El usuario no está registrado y no tiene menú de usuario')
     }
-
-    // Cerrar sesión
+// Cerrar sesión
     // Capturamos clic sobre el item de cerrar sesión
     document.querySelector('header').addEventListener('click', (e) => {
       if (e.target.classList.contains('cerrarSesion')) {
         e.preventDefault()
+
+        // Cerramos sesión en la bd
+        User.logout()
         // Borramos el localstorage
         ls.setUsuario('')
         // Cargamos la pagina home
@@ -110,5 +114,9 @@ export const header = {
         header.script()
       }
     })
+
+
+    
+
   }
 }

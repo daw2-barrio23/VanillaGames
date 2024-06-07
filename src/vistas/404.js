@@ -1,17 +1,18 @@
+
+
 export default {
-  // Archivo funcionando
-    template: // html
-    `
+  template: `
   <div class="container">
-    <h1 class="mt-5 text-center fw-bold" style="font-size: 100px">
-      Vanilla Games
-    </h1>
-    <div class="m-5 mx-auto" style="max-width: 400px">
-      404
-    </div>
+      <div class="row">
+          <div class="col-md-12 error-container">
+              <h1 class="error-heading">Error 404</h1>
+              <p class="error-message">Lo sentimos, la página que estás buscando no pudo ser encontrada.</p>
+              
+          </div>
+      </div>
   </div>
-    `,
-    script: () => {
-      console.log('Vista home cargada')
-    }
+  `,
+  script: ()=>{
+      console.log('error 404')
   }
+}
