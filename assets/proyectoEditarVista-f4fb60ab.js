@@ -1,6 +1,5 @@
-import { p as proyectos } from "./datosPrueba-ef04ddb8.js";
+import { p as proyectos } from "./datosPruebas-ef04ddb8.js";
 const proyectoEditarVista = {
-  // Archivo funcionando
   template: (
     // html
     `

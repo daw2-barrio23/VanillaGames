@@ -1,7 +1,6 @@
-import { p as proyectos, a as perfiles } from "./datosPrueba-ef04ddb8.js";
-import { l as ls } from "./main-f759cdff.js";
+import { p as proyectos, a as perfiles } from "./datosPruebas-ef04ddb8.js";
+import { l as ls } from "./main-b6ccf55f.js";
 const editarImagenPerfil = {
-  // Archivo funcionando
   template: (
     // html
     `
@@ -92,7 +91,6 @@ const editarImagenPerfil = {
   }
 };
 const adminVista = {
-  // Archivo funcionando
   template: (
     // html
     `

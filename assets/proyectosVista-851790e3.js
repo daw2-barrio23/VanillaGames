@@ -1,7 +1,6 @@
-import { p as proyectos } from "./datosPrueba-ef04ddb8.js";
-import { l as ls } from "./main-f759cdff.js";
-const proyectoVista = {
-  // Archivo funcionando
+import { p as proyectos } from "./datosPruebas-ef04ddb8.js";
+import { l as ls } from "./main-b6ccf55f.js";
+const proyectosVista = {
   template: (
     // html
     `
@@ -110,8 +109,19 @@ const proyectoVista = {
 </div>
   `
   ),
-  script: () => {
-    const datos = proyectos;
+  script: async () => {
+    const datosBd = await proyectos.getAll();
+    console.log("datos", datosBd);
+    const datos = datosBd.map((dato) => {
+      const fecha = dato.created_at;
+      const nuevaFecha = fecha.split("T")[0];
+      const fechaFormateada = `${nuevaFecha.split("-")[2]}/${nuevaFecha.split("-")[1]}/${nuevaFecha.split("-")[0]}`;
+      const datoFormateado = {
+        ...dato,
+        created_at: fechaFormateada
+      };
+      return datoFormateado;
+    });
     const pintaTabla = (proyectosFiltrados) => {
       if (misProyectos) {
         proyectosFiltrados = datos.filter((proyecto) => proyecto.user_id === usuario.user_id);
@@ -299,5 +309,5 @@ const proyectoVista = {
   }
 };
 export {
-  proyectoVista as default
+  proyectosVista as default
 };

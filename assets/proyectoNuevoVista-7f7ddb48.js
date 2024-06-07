@@ -1,5 +1,4 @@
 const proyectoNuevoVista = {
-  // Archivo funcionando
   template: (
     // html
     `
@@ -117,18 +116,28 @@ const proyectoNuevoVista = {
         enviaDatos();
       }
     });
-    function enviaDatos() {
-      const proyectoEditado = {
-        imagen: document.querySelector("#urlImagen").value,
-        nombre: document.querySelector("#nombreJuego").value,
-        descripcion: document.querySelector("#descripcion").value,
-        fecha: document.querySelector("#fecha").value,
-        estado: document.querySelector("#estado").value,
-        enlace: document.querySelector("#enlace").value,
-        repositorio: document.querySelector("#repositorio").value
-      };
-      alert("Enviando proyecto a la base de datos");
-      console.log("Enviando a la base de datos ", proyectoEditado);
+    async function enviaDatos() {
+      try {
+        const user = await User.getUser();
+        const userId = user.id;
+        const proyectoEditado = {
+          // Asignación de valores a las propiedades del proyecto
+          imagen: document.querySelector("#urlImagen").value,
+          nombre: document.querySelector("#nombreJuego").value,
+          descripcion: document.querySelector("#descripcion").value,
+          created_at: document.querySelector("#fecha").value,
+          estado: document.querySelector("#estado").value,
+          enlace: document.querySelector("#enlace").value,
+          repositorio: document.querySelector("#repositorio").value,
+          user_id: userId
+        };
+        const proyectoCreado = await Proyecto.create(proyectoEditado);
+        alert("Proyecto creado con éxito", proyectoCreado.nombre);
+        console.log("Enviando a la base de datos ", proyectoCreado);
+        window.location = "#/proyectos";
+      } catch (error) {
+        alert("Error al crear el proyecto", error);
+      }
     }
   }
 };
